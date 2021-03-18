@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="board-container">
+    <div class="board-top-menu">
+        <div class="board-top-menu-title">The retro retro</div>
+        <div class="board-top-menu-item">Standard</div>
+        <div class="board-top-menu-item">Sailboat</div>
+        <div class="board-top-menu-item">Start Stop Continue</div>
+        <div class="board-top-menu-item">Three Little Pigs</div>
+        <div class="board-top-menu-item">Cultural Motivator Activity</div>
+        <div class="board-top-menu-item">Whiteboard</div>
+    </div>
+    <div class="board-content">
+        <div class="cards">
+            <div class="cards-container">
+                <div class="cards-container-head">
+                    <div class="cards-container-title"> Stop</div>
+                </div>
+                <form action="/stop" method="POST">
+                    <input type="text" placeholder=" What should we stop doing?" name="description">
+                </form>
+                <div class="card-container">
+                    <div class="description">Dating older women</div>
+                    <div class="card-footer">
+                        <div class="card-score">1</div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="description">Having meetings > 10 people</div>
+                    <div class="card-footer">
+                        <div class="card-score">7</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-container">
+                <div class="cards-container-head">
+                    <div class="cards-container-title"> Start</div>
+                </div>
+                <form action="/start" method="POST">
+                    <input type="text" placeholder=" What should we start doing?" name="description">
+                </form>
+                <div class="card-container">
+                    <div class="card-footer">
+                        <div class="card-score">2</div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card-footer">
+                        <div class="card-score">3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-container">
+                <div class="cards-container-head">
+                    <div class="cards-container-title"> Continue</div>
+                </div>
+                <form action="/continue" method="POST">
+                    <input type="text" placeholder=" What should we continue?" name="description">
+                </form>
+                <% for(var i = 0; i < text.length; i++) { %>
+                    <div class="card-container">
+                        <div class="description"><%= text[i].details %></div>
+                        <div class="card-footer">
+                            <div class="card-score">2</div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
